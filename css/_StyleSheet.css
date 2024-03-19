@@ -1,0 +1,35 @@
+﻿body {
+    background-image: url("../imgs/light_gray_background.jpg");
+    /* https://www.freepik.com/author/lifeforstock author of this background image--%> */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#AdminButton.FooterCss {
+    color: #000000;
+    text-decoration: none !important;
+}
+#UserMngmt.FooterCss {
+    color: #000000;
+    text-decoration: none !important;
+}
+
+#AdminButton.FooterCss:hover {
+    color: #2b2b2b;
+}
+
+#UserMngmt.FooterCss:hover {
+    color: #2b2b2b;
+}
+
+#TopFooter.container-fluid {
+    background: #ffffffff;
+}
+
+#BottomFooter.container-fluid {
+    background: #ffffffff;
+}
+
+.card {
+    background-color: #9b9b9b55;
+}

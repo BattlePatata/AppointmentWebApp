@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="AppointmentWebApp.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Lukman Kabulhana</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/transparent_medicine_snake.png" />
+        
+        <%-- bootstrap css --%>
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <%-- datatables css --%>
+        <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <%-- fontawesome css --%>
+        <link href="fontawesome/css/all.css" rel="stylesheet" />
+        <%-- customStyleSheet css--%>
+        <link href="css/_StyleSheet.css" rel="stylesheet" />
+
+        <%-- jquery --%>
+        <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
+        <%-- popper js --%>            
+        <script src="bootstrap/js/popper.min.js"></script>
+        <%-- bootstrap js --%>            
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <%-- jquery js --%>            
+        <script src="datatables/js/jquery.dataTables.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body> 
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-light navbar-expand-lg bg-body-light">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="homepage.aspx">
+                    <img src="imgs/transparent_medicine_snake.png" width="30" height="30"/>
+                    Lukman Kabulhana
+                </a>
+
+                <button class="navbar-toggler" type="button" 
+                        data-toggle="collapse" data-target="#navbarSupportedContent" 
+                        aria-controls="navbarSupportedContent" aria-expanded="false" 
+                        aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                
+                    <li class="nav-item active">
+                      <a class="nav-link" aria-current="page" href="#"></a>
+                    </li>
+                  </ul>
+              
+                  <ul class="navbar-nav">
+
+                      <li class="nav-item active">
+                          <asp:LinkButton CssClass="nav-link"
+                              ID="LoginButton"
+                              runat="server"
+                              OnClick="LoginButton_Click">User Login
+                                      
+                          </asp:LinkButton>
+                      </li>
+
+                      <li class="nav-item active">
+                          <asp:LinkButton class="nav-link"
+                              ID="SignUpButton"
+                              runat="server"
+                              OnClick="SignUpButton_Click">Sign Up
+                          </asp:LinkButton>
+                      </li>
+
+                      <li class="nav-item active">
+                          <asp:LinkButton class="nav-link"
+                                          ID="LogoutButton"
+                                          runat="server"
+                                          OnClick="LogoutButton_Click"
+                                          >Logout
+                          </asp:LinkButton>
+                      </li>
+
+                      <li class="nav-item active">
+                          <asp:LinkButton class="nav-link"
+                                          ID="UserPageButton"
+                                          runat="server"
+                                          OnClick="UserPageButton_Click">Hello Arbuzer
+                          </asp:LinkButton>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        </div>
+
+        <!-- Main Content Placeholder -->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Main Footer Placeholder -->
+        <footer>
+            <div id="TopFooterID" class="container-fluid" >
+                <div class="row" >
+                    <div class="col-xs-12 col-md-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton CssClass="FooterCss" ID="AdminButton"
+                                            runat="server" OnClick="AdminButton_Click"
+                                            Font-Underline="false">Admin Login
+                            </asp:LinkButton>
+
+                            <asp:LinkButton CssClass="FooterCss" ID="UserMngmt"
+                                            runat="server" OnClick="UserMngmt_Click"
+                                            Font-Underline="false">User Management
+                            </asp:LinkButton>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="BottomFooterID" class="container-fluid" >
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-md-12 text-center">
+                        <p>&copy All rights Reserved. <a class="FooterLinkCss" href="https://github.com/BattlePatata">Öwez Çöliýew</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
