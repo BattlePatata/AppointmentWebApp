@@ -15,6 +15,15 @@ namespace AppointmentWebApp
     {
 
         /// <summary>
+        /// ProfilePicFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload ProfilePicFileUpload;
+
+        /// <summary>
         /// FullNameBox control.
         /// </summary>
         /// <remarks>
@@ -24,58 +33,22 @@ namespace AppointmentWebApp
         protected global::System.Web.UI.WebControls.TextBox FullNameBox;
 
         /// <summary>
-        /// DobBox control.
+        /// CategDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DobBox;
+        protected global::System.Web.UI.WebControls.DropDownList CategDropDownList;
 
         /// <summary>
-        /// ContactNoBox control.
+        /// OfficeHoursBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ContactNoBox;
-
-        /// <summary>
-        /// EmailIdBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EmailIdBox;
-
-        /// <summary>
-        /// StateDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList StateDropDownList;
-
-        /// <summary>
-        /// CityBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CityBox;
-
-        /// <summary>
-        /// PinCodeBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PinCodeBox;
+        protected global::System.Web.UI.WebControls.TextBox OfficeHoursBox;
 
         /// <summary>
         /// FullAdrsBox control.
@@ -87,13 +60,13 @@ namespace AppointmentWebApp
         protected global::System.Web.UI.WebControls.TextBox FullAdrsBox;
 
         /// <summary>
-        /// UserIdBox control.
+        /// DoctorIdBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UserIdBox;
+        protected global::System.Web.UI.WebControls.TextBox DoctorIdBox;
 
         /// <summary>
         /// PasswrdBox control.

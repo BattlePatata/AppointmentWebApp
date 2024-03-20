@@ -38,10 +38,10 @@ namespace AppointmentWebApp
                     while (dr.Read())
                     {
                         Response.Write("<script>alert('Login Successful');</script>");
-                        Session["username"] = dr.GetValue(8).ToString();
+                        Session["username"] = dr.GetValue(5).ToString();
                         Session["fullname"] = dr.GetValue(0).ToString();
                         Session["role"] = "doctor";
-                        Session["status"] = dr.GetValue(10).ToString();
+                        Session["status"] = dr.GetValue(7).ToString();
                     }
 
                     Response.Redirect("homepage.aspx");

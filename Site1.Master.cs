@@ -24,14 +24,14 @@ namespace AppointmentWebApp
                     AdminButton.Visible = true; // Admin login LinkButton
                     UserMngmt.Visible = false; // User Management LinkButton
                 }
-                else if (Session["role"].Equals("user"))
+                else if (Session["role"].Equals("doctor"))
                 {
                     LoginButton.Visible = false; // Login LinkButton
                     SignUpButton.Visible = false; // Sign Up LinkButton
 
                     LogoutButton.Visible = true; // Logout LinkButton
                     UserPageButton.Visible = true; // Hello User LinkButton
-                    UserPageButton.Text = "Hello " + Session["username"].ToString();
+                    UserPageButton.Text = "Hello " + Session["fullname"].ToString();
 
                     AdminButton.Visible = true; // Admin login LinkButton
                     UserMngmt.Visible = false; // User Management LinkButton
