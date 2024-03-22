@@ -29,5 +29,30 @@ namespace AppointmentWebApp
                 Response.Redirect("admin_login.aspx");
             }
         }
+
+        protected void IdButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ActiveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void PengindButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DeactiveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DeleteDoctorButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

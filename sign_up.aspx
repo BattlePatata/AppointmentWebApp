@@ -27,6 +27,7 @@
                         
                         <div class="row">
                             <div class="col">
+                                <label>Profile Photo Upload<sup>*</sup></label>
                                 <asp:FileUpload OnChange="readURL(this);" class="form-control" ID="ProfilePicFileUpload" runat="server" />
                             </div>
                         </div>
@@ -40,7 +41,7 @@
                         <div class="row">
                             <div class="col-md-12 mx-auto">
                                 <center>
-                                    <label>Full Name</label>
+                                    <label>Full Name<sup>*</sup></label>
                                 </center>
 
                                 <div class="form-group">
@@ -53,7 +54,7 @@
                         <%--Category and Office Hours--%>
                         <div class="row">
                             <div class="col-md-6 mx-auto">
-                                <label>Category</label>
+                                <label>Category<sup>*</sup></label>
                                     <div class="form-group">
                                         <asp:DropDownList ID="CategDropDownList" runat="server"
                                                           CssClass="form-control">
@@ -68,7 +69,7 @@
                             </div>
                         
                             <div class="col-md-6 mx-auto">
-                                <label>Office hours</label>
+                                <label>Office hours<sup>*</sup></label>
                                     <div class="form-group">
                                         <asp:TextBox ID="OfficeHoursBox" runat="server"
                                                      CssClass="form-control" placeholder="09:00-13:00"
@@ -100,18 +101,18 @@
                         <%--Doctor ID, Password--%>
                         <div class="row">
                             <div class="col-md-6 mx-auto">
-                                <label>Doctor ID</label>
+                                <label>Doctor ID<sup>*</sup></label>
                                     <div class="form-group">
                                         <asp:TextBox ID="DoctorIdBox" runat="server" 
-                                                 CssClass="form-control" placeholder="Doctor ID"></asp:TextBox>
+                                                 CssClass="form-control" placeholder="Doctor ID (Prohibited symbols: ', `, ;)"></asp:TextBox>
                                     </div>
                             </div>
     
                             <div class="col-md-6 mx-auto">
-                                <label>Password</label>
+                                <label>Password<sup>*</sup></label>
                                     <div class="form-group">
                                         <asp:TextBox ID="PasswrdBox" runat="server"
-                                                 CssClass="form-control" placeholder="Password"
+                                                 CssClass="form-control" placeholder="Password (Prohibited symbols: ', `, ;)"
                                                  TextMode="Password"></asp:TextBox>
                                     </div>
                             </div>

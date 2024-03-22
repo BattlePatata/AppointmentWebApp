@@ -35,6 +35,8 @@ namespace AppointmentWebApp
 
                     AdminButton.Visible = true; // Admin login LinkButton
                     UserMngmt.Visible = false; // User Management LinkButton
+
+                    
                 }
                 else if (Session["role"].Equals("admin"))
                 {

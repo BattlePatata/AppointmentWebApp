@@ -76,6 +76,7 @@
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
     <Content Include="doctor_imgs\generaluser.png" />
+    <Content Include="doctor_imgs\smiling.jpg" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
     <Content Include="fontawesome\css\brands.css" />
@@ -2153,6 +2154,7 @@
     <Content Include="imgs\generaluser.png" />
     <Content Include="imgs\light_gray_background.jpg" />
     <Content Include="imgs\transparent_medicine_snake.png" />
+    <Content Include="js\FAQ.js" />
     <Content Include="sign_up.aspx" />
     <Content Include="user_login.aspx" />
     <Content Include="user_management.aspx" />

@@ -33,3 +33,33 @@
 .card {
     background-color: #9b9b9b55;
 }
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 4rem 0; /* Adjust padding as needed */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem; /* Adjust gap between FAQ items */
+}
+
+h3 {
+    font-size: 1.125rem; /* Adjust font size */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.border-t {
+    border-top: 1px solid #ddd; /* Adjust border color */
+}
+
+.text-blue-600 {
+    color: #3b82f6; /* Adjust answer toggle button color */
+}
+
+.hover {
+    text-decoration: underline;
+}

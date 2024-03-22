@@ -29,7 +29,10 @@ namespace AppointmentWebApp
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM admin_master_tbl where username='" + AdminBox.Text.Trim() + "' AND password='" + PasswrdBox.Text.Trim() + "'", con);
+                string login = AdminBox.Text.Trim().Replace("'", "");
+                string password = PasswrdBox.Text.Trim().Replace("'", "");
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM admin_master_tbl where username='" + login + "' AND password='" + password + "'", con);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -42,7 +45,8 @@ namespace AppointmentWebApp
                         Session["fullname"] = dr.GetValue(2).ToString();
                         Session["role"] = "admin";
                     }
-                    Response.Redirect("homepage.aspx");
+
+                    Response.Redirect("user_management.aspx");
                 }
                 else
                 {

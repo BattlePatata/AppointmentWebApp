@@ -18,7 +18,7 @@ namespace AppointmentWebApp
         {
 
         }
-        // Sign up Button click event
+
         protected void SignUpButton_Click(object sender, EventArgs e)
         {
             if (checkDoctorExists())
@@ -92,7 +92,10 @@ namespace AppointmentWebApp
                 // Password creation logic
                 if (PasswrdBox.Text.Trim().Length > 7 && PasswrdBox.Text.Trim().Length < 16)
                 {
-                    cmd.Parameters.AddWithValue("@password", PasswrdBox.Text.Trim());
+                    string password = PasswrdBox.Text.Trim().Replace("'", "");
+                    password.Replace(";", "");
+                    password.Replace("`", "");
+                    cmd.Parameters.AddWithValue("@password", password);
                 }
                 else
                 {
@@ -114,19 +117,23 @@ namespace AppointmentWebApp
                     cmd.Parameters.AddWithValue("@profile_photo_link", filepath);
                 }
 
+                string login = DoctorIdBox.Text.Trim().Replace("'", "");
+                login.Replace(";", "");
+                login.Replace("`", "");
+
                 cmd.Parameters.AddWithValue("@fullname", FullNameBox.Text.Trim());
                 cmd.Parameters.AddWithValue("@category", CategDropDownList.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@place_of_work", FullAdrsBox.Text.Trim());
-                cmd.Parameters.AddWithValue("@doctor_id", DoctorIdBox.Text.Trim());
+                cmd.Parameters.AddWithValue("@doctor_id", login);
                 cmd.Parameters.AddWithValue("@status", "pending");
                 
                 cmd.ExecuteNonQuery();
 
 
-                cmd = new SqlCommand("IF NOT EXISTS (SELECT * FROM sys.tables WHERE NAME LIKE '" + DoctorIdBox.Text.Trim() + "_office_hours_tbl') CREATE TABLE " + DoctorIdBox.Text.Trim() + "_office_hours_tbl (fullname varchar(100) null, phone_number varchar(50) not null, date varchar(100) null, constraint PK_phone_number primary key clustered(phone_number))", con);
+                cmd = new SqlCommand("IF NOT EXISTS (SELECT * FROM sys.tables WHERE NAME LIKE '" + login + "_office_hours_tbl') CREATE TABLE " + login + "_office_hours_tbl (fullname varchar(100) null, phone_number varchar(50) not null, date varchar(100) null, constraint PK_phone_number primary key clustered(phone_number))", con);
                 cmd.ExecuteNonQuery();
 
-                cmd = new SqlCommand("IF NOT EXISTS (SELECT * FROM sys.tables WHERE NAME LIKE '" + DoctorIdBox.Text.Trim() + "_question_answer_tbl') CREATE TABLE " + DoctorIdBox.Text.Trim() + "_question_answer_tbl (question varchar(max) not null, answer varchar(max) null)", con);
+                cmd = new SqlCommand("IF NOT EXISTS (SELECT * FROM sys.tables WHERE NAME LIKE '" + login + "_question_answer_tbl') CREATE TABLE " + login + "_question_answer_tbl (q_id int not null, question varchar(max) null, answer varchar(max) null, constraint PK_q_id1 primary key clustered(q_id))", con);
                 cmd.ExecuteNonQuery();
 
                 con.Close();

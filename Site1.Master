@@ -24,6 +24,10 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <%-- jquery js --%>            
         <script src="datatables/js/jquery.dataTables.min.js"></script>
+        <%-- F.A.Q js --%>            
+        <script src="js/FAQ.js"></script>
+
+        
 
     <asp:ContentPlaceHolder ID="head" runat="server">
 

@@ -29,7 +29,10 @@ namespace AppointmentWebApp
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM doctor_master_tbl where doctor_id='" + UserIdBox.Text.Trim() + "' AND password='" + PasswrdBox.Text.Trim() + "'", con);
+                string login = UserIdBox.Text.Trim().Replace("'", "");
+                string password = PasswrdBox.Text.Trim().Replace("'", "");
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM doctor_master_tbl where doctor_id='" + login + "' AND password='" + password + "'", con);
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -42,9 +45,12 @@ namespace AppointmentWebApp
                         Session["fullname"] = dr.GetValue(0).ToString();
                         Session["role"] = "doctor";
                         Session["status"] = dr.GetValue(7).ToString();
+                        Session["profPic"] = dr.GetValue(4).ToString();
+
+                        string QandA = Session["username"] + "_question_answer_tbl";
                     }
 
-                    Response.Redirect("homepage.aspx");
+                    Response.Redirect("user_page.aspx");
                 }
                 else
                 {
@@ -56,5 +62,7 @@ namespace AppointmentWebApp
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
+
+        // User Defined Function
     }
 }
