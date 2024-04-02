@@ -2150,8 +2150,6 @@
     <Content Include="fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\svgs\solid\z.svg" />
     <Content Include="homepage.aspx" />
-    <Content Include="htmx\htmx.min.js" />
-    <Content Include="hyperscript\_hyperscript.min.js" />
     <Content Include="imgs\adminuser.png" />
     <Content Include="imgs\generaluser.png" />
     <Content Include="imgs\light_gray_background.jpg" />
