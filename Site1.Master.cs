@@ -45,7 +45,7 @@ namespace AppointmentWebApp
 
                     LogoutButton.Visible = true; // Logout LinkButton
                     UserPageButton.Visible = true; // Hello User LinkButton
-                    UserPageButton.Text = "Hello " + Session["username"].ToString() + " Admin";
+                    UserPageButton.Text = "Hello " + Session["username"].ToString();
 
                     AdminButton.Visible = false; // Admin login LinkButton
                     UserMngmt.Visible = true; // User Management LinkButton

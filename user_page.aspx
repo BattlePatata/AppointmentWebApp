@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="user_page.aspx.cs" Inherits="AppointmentWebApp.user_page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="js/FAQ.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
@@ -133,7 +133,7 @@
                                         </div>
                                 </div>
                             </div>
-                            <%--Sign up button--%>
+                            <%--Update button--%>
                             <div class="row">
                                 <div class="col-8 mx-auto">
                                     <div class="form-group">
@@ -146,9 +146,6 @@
                             </div>
                         </div>
                     </div>
-        
-                <a href="homepage.aspx"><< Back to Home</a><br><br>
-
             </div>
 
              <div class="col-md-5">
@@ -195,13 +192,130 @@
         </div>
     </div>
 
-    <center>
-        <section class="w-full py-6">
-            <div class="container">
-                <div class="grid">
-                    <asp:PlaceHolder ID="faqListPlaceHolder" runat="server"></asp:PlaceHolder>
+    <br />
+
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-md-7 mx-auto">
+                 <div class="card">
+                     <div class="card-body">
+                         <div class="row">
+                             <div class="col">
+                                 <center>
+                                     <h4>F.A.Q</h4>
+                                 </center>
+                             </div>
+                         </div>
+
+                         <%--Question ID --%>
+                         <div class="row">
+                             <div class="col-md-6 mx-auto">
+                                 <label>Question ID</label>
+                                     <div class="form-group">
+                                         <div class="input-group">
+                                             <asp:TextBox ID="QuestionIdBox" runat="server" 
+                                                             CssClass="form-control" placeholder="Question ID"></asp:TextBox>
+                                               <asp:LinkButton class="btn btn-primary" ID="QuestionButton" OnClick="QuestionButton_Click" 
+                                                           runat="server"><i class="fas fa-check-circle"></i></asp:LinkButton>
+                                         </div>
+                                     </div>
+                             </div>
+                         </div>
+                         
+                         <%--FAQ --%>
+                         <div class="row">
+                             <div class="col-md-6 mx-auto">
+                                 <label>Question</label>
+                                     <div class="form-group">
+                                         <asp:TextBox ID="QuestionBox" runat="server"
+                                                         CssClass="form-control" placeholder="Question"
+                                                         TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                     </div>
+                             </div>
+
+                             <div class="col-md-6 mx-auto">
+                                 <label>Answer</label>
+                                     <div class="form-group">
+                                         <asp:TextBox ID="AnswerBox" runat="server"
+                                                         CssClass="form-control" placeholder="Answer"
+                                                         TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                     </div>
+                             </div>
+                         </div>
+         
+                         <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <center>
+                                        <asp:Button class="btn btn-lg btn-block btn-success" ID="AddButton" 
+                                                    runat="server" Text="Add" OnClick="AddButton_Click"/>
+                                    </center>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <center>
+                                        <asp:Button class="btn btn-lg btn-block btn-primary" ID="Update_Button" 
+                                                    runat="server" Text="Update" OnClick="Update_Button_Click"/>
+                                    </center>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <center>
+                                        <asp:Button class="btn btn-lg btn-block btn-danger" ID="DeleteButton" 
+                                                    runat="server" Text="Delete" OnClick="DeleteButton_Click"/>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                 </div>
+ 
+                 <a href="homepage.aspx"><< Back to Home</a><br><br>
+             </div>
+
+             <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <center>
+                                    <h4>F.A.Q List</h4>
+                                </center>
+                            </div>
+                        </div>
+  
+                        <div class="row">
+                            <div class="col">
+                                <hr />
+                            </div>
+                        </div>
+
+                        <asp:SqlDataSource ID="FAQSqlDataSource" runat="server"
+                            ConnectionString="<%$ ConnectionStrings:lukman_kabulhanaDBConnectionString %>"
+                            ProviderName="<%$ ConnectionStrings:lukman_kabulhanaDBConnectionString.ProviderName %>"
+                            ></asp:SqlDataSource>
+
+                        <div class="row">
+                            <div class="col">
+                                <asp:GridView ID="FAQGridView" runat="server"
+                                              class="table table-striped table-bordered" 
+                                              AutoGenerateColumns="False"
+                                              DataSourceID="FAQSqlDataSource">
+                                    <Columns>
+                                        <asp:BoundField DataField="q_id" HeaderText="ID" SortExpression="q_id"></asp:BoundField>
+                                        <asp:BoundField DataField="question" HeaderText="Question" SortExpression="question"></asp:BoundField>
+                                        <asp:BoundField DataField="answer" HeaderText="Answer" SortExpression="answer"></asp:BoundField>
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                        </div>
+                   </div>
                 </div>
-            </div>
-        </section>
-    </center>
+             </div>
+         </div>
+     </div>
 </asp:Content>

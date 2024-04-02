@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="sign_up.aspx.cs" Inherits="AppointmentWebApp.sign_up" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
@@ -58,12 +59,12 @@
                                     <div class="form-group">
                                         <asp:DropDownList ID="CategDropDownList" runat="server"
                                                           CssClass="form-control">
-                                            <asp:ListItem Text="Select" Value="select"></asp:ListItem>
-                                            <asp:ListItem Text="Obstetrician-gynecologist" Value="obstetrician-gynecologist"></asp:ListItem>
-                                            <asp:ListItem Text="Pediatritian" Value="pediatritian"></asp:ListItem>
-                                            <asp:ListItem Text="Therapist" Value="therapist"></asp:ListItem>
-                                            <asp:ListItem Text="Dantist" Value="dantist"></asp:ListItem>
-                                            <asp:ListItem Text="ENT" Value="ent"></asp:ListItem>
+                                            <asp:ListItem Text="Kategoriýany saýlaň" Value="Kategoriýany saýlaň"></asp:ListItem>
+                                            <asp:ListItem Text="Akuşer-ginekolog" Value="Akuşer-ginekolog"></asp:ListItem>
+                                            <asp:ListItem Text="Pediatr" Value="Pediatr"></asp:ListItem>
+                                            <asp:ListItem Text="Terapewt" Value="Terapewt"></asp:ListItem>
+                                            <asp:ListItem Text="Diş lukmany" Value="Diş lukmany"></asp:ListItem>
+                                            <asp:ListItem Text="Gulak Burun Bokurdak lukmany" Value="Gulak Burun Bokurdak lukmany"></asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
                             </div>

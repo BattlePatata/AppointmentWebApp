@@ -50,7 +50,10 @@ namespace AppointmentWebApp
                         string QandA = Session["username"] + "_question_answer_tbl";
                     }
 
+                    con.Close();
+
                     Response.Redirect("user_page.aspx");
+
                 }
                 else
                 {

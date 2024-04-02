@@ -14,7 +14,8 @@
         <%-- fontawesome css --%>
         <link href="fontawesome/css/all.css" rel="stylesheet" />
         <%-- customStyleSheet css--%>
-        <link href="css/_StyleSheet.css" rel="stylesheet" />
+        <link href="~/css/Custom_StyleSheet.css" rel="stylesheet" runat="server"/>
+
 
         <%-- jquery --%>
         <script src="bootstrap/js/jquery-3.2.1.slim.min.js"></script>
@@ -26,8 +27,10 @@
         <script src="datatables/js/jquery.dataTables.min.js"></script>
         <%-- F.A.Q js --%>            
         <script src="js/FAQ.js"></script>
-
-        
+        <%-- HTMX js--%>
+        <script src="htmx/htmx.min.js"></script>
+        <%-- Hyperscript --%>
+        <script src="hyperscript/_hyperscript.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
 
@@ -128,7 +131,7 @@
             <div id="BottomFooterID" class="container-fluid" >
                 <div class="row">
                     <div class="col-xs-12 col-md-12 col-md-12 text-center">
-                        <p>&copy All rights Reserved. <a class="FooterLinkCss" href="https://github.com/BattlePatata">Öwez Çöliýew</a></p>
+                        <p>&copy All rights Reserved. <a id="github_link" href="https://github.com/BattlePatata">Öwez Çöliýew</a></p>
                     </div>
                 </div>
             </div>

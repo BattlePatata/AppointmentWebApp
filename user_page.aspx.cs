@@ -15,11 +15,6 @@ namespace AppointmentWebApp
     {
         string strconnect = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
 
-        protected List<FAQItem> Faqs = new List<FAQItem>()
-        {
-            new FAQItem { Question = "Can I upgrade or downgrade my plan later?", Answer = "Yes, you can easily upgrade or downgrade your plan at any time..." },
-            // ... add more FAQ items
-        };
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,10 +34,10 @@ namespace AppointmentWebApp
                         AppointmentGridView.DataBind();
 
                         string OfficeHoursStr = "SELECT * FROM [" + Session["username"].ToString().Trim() + "_office_hours_tbl]";
+                        string FAQStr = "SELECT * FROM [" + Session["username"].ToString().Trim() + "_question_answer_tbl]";
 
                         OfficeHoursSqlDataSource.SelectCommand = OfficeHoursStr;
-
-                        BindFaqs();
+                        FAQSqlDataSource.SelectCommand = FAQStr;
                     }
                 }
             }
@@ -59,27 +54,27 @@ namespace AppointmentWebApp
         }
 
         // User Defined Functions 
-        private void BindFaqs()
+        
+        protected void QuestionButton_Click(object sender, EventArgs e)
         {
-            var faqListPlaceHolder = FindControl("faqListPlaceHolder") as PlaceHolder;
 
-            foreach (var faq in Faqs)
-            {
-                var faqItem = new LiteralControl();
+        }
 
-                faqItem.Text = $@"
-                <div class=""space-y-2"">
-                    <h3>{faq.Question}</h3>
-                    <div data-state=""closed"" class=""border-t border-gray-200 pt-2 dark:border-gray-800"">
-                        <button class=""inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 font-semibold text-blue-600 hover:underline"" type=""button"" aria-controls=""radix-:r{Faqs.IndexOf(faq)}"" aria-expanded=""false"" data-state=""closed"">
-                            Toggle answer
-                        </button>
-                    </div>
-                </div>
-            ";
+        protected void AddButton_Click(object sender, EventArgs e)
+        {
 
-                faqListPlaceHolder.Controls.Add(faqItem);
-            }
+        }
+
+
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Update_Button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
